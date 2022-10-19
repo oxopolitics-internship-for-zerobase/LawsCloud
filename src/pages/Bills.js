@@ -14,6 +14,7 @@ import {billListState, pageState, excelFilterState} from "../state/StateBillList
 import BillsList from "../components/BillList/BillsList";
 import SearchBar from "../components/BillList/SearchBar";
 import PageNationSession from "../components/BillList/PageNationSession";
+import RecentReplys from "../components/Reply/RecentReply";
 
 //useEffect
 import {useBillList} from "../hooks/useBillList";
@@ -34,20 +35,23 @@ const Bills = () => {
 
   useBillList(searchFilter, category);
   return (
-    <StyledWrap>
-      <main>
-        <SearchBar
-          searchFilter={searchFilter}
-          setSearchFilter={setSearchFilter}
-          category={category}
-          setCategory={setCategory}
-        />
-        <BillsList billList={billList} setExcelFilter={setExcelFilter} setPage={setPage} />
-      </main>
-      <footer>
-        <PageNationSession page={page} searchFilter={searchFilter} setPage={setPage} category={category} />
-      </footer>
-    </StyledWrap>
+    <>
+      <StyledWrap>
+        <main>
+          <SearchBar
+            searchFilter={searchFilter}
+            setSearchFilter={setSearchFilter}
+            category={category}
+            setCategory={setCategory}
+          />
+          <BillsList billList={billList} setExcelFilter={setExcelFilter} setPage={setPage} />
+        </main>
+        <footer>
+          <PageNationSession page={page} searchFilter={searchFilter} setPage={setPage} category={category} />
+        </footer>
+      </StyledWrap>
+      <RecentReplys />
+    </>
   );
 };
 

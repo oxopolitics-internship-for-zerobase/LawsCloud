@@ -35,23 +35,21 @@ const Bills = () => {
 
   useBillList(searchFilter, category);
   return (
-    <>
-      <StyledWrap>
-        <main>
-          <SearchBar
-            searchFilter={searchFilter}
-            setSearchFilter={setSearchFilter}
-            category={category}
-            setCategory={setCategory}
-          />
-          <BillsList billList={billList} setExcelFilter={setExcelFilter} setPage={setPage} />
-        </main>
-        <footer>
-          <PageNationSession page={page} searchFilter={searchFilter} setPage={setPage} category={category} />
-        </footer>
-      </StyledWrap>
+    <StyledWrap>
+      <main>
+        <SearchBar
+          searchFilter={searchFilter}
+          setSearchFilter={setSearchFilter}
+          category={category}
+          setCategory={setCategory}
+        />
+        <BillsList billList={billList} setExcelFilter={setExcelFilter} setPage={setPage} />
+      </main>
+      <footer>
+        <PageNationSession page={page} searchFilter={searchFilter} setPage={setPage} category={category} />
+      </footer>
       <RecentReplys />
-    </>
+    </StyledWrap>
   );
 };
 

@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Title from "./components/Title";
 import WordCloudPage from "./pages/WordCloudPage";
 import ComparedWordCloudPage from "./pages/ComparedWordCloudPage";
+
 import Bills from "./pages/Bills";
 import axios from "axios";
 import {useRecoilState} from "recoil";

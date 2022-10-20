@@ -25,13 +25,13 @@ export default function RecentReplysView({recentReplyArr}) {
   const [billsInformation, setBillsInformation] = useState({});
   const [viewCount, setViewCount] = useState(0);
 
-  console.log(recentReplyArr);
-  const overlappingReplyCheck = recentReplyArr.reduce(function (acc, current) {
+  let overlappingReplyCheck = recentReplyArr.reduce(function (acc, current) {
     if (acc.findIndex(({id}) => id === current.id) === -1) {
       acc.push(current);
     }
     return acc;
   }, []);
+  overlappingReplyCheck.sort((prev, next) => next.seconds - prev.seconds);
 
   const setView = (data) => {
     const firebaseRef = ref(firebasedatabase, "billId/" + data.billId);
@@ -61,36 +61,36 @@ export default function RecentReplysView({recentReplyArr}) {
       .then((res) => setBillsInformation(res.data.nzmimeepazxkubdpn[1].row))
       .catch((error) => alert(`검색 결과가 없습니다.\n${error}`));
   };
-  console.log(billsInformation);
 
   return (
     <>
       <Replys>
         <Title>최신 댓글</Title>
-        {overlappingReplyCheck.map((data) => (
-          <RecentReply
-            onClick={() => {
-              setOnModal(!onModal);
-              getBillsData({data, setBillsInformation});
-              setView(data);
-            }}
-            key={data.key}>
-            <BillNameArea>
-              <BillName>{data.billName}</BillName>
-            </BillNameArea>
-
-            <ReplyArea>
-              <Reply className="icon">
-                <ArrowBackIcon width={23} height={20} />
-                <span>{data.text}</span>
-              </Reply>
-              <Info>
-                <span>{data.creatorId}</span>
-                {/* <span>{data.createdAt}</span> */}
-              </Info>
-            </ReplyArea>
-          </RecentReply>
-        ))}
+        <div className="recent-replies">
+          {overlappingReplyCheck.map((data) => (
+            <RecentReply
+              onClick={() => {
+                setOnModal(!onModal);
+                getBillsData({data, setBillsInformation});
+                setView(data);
+              }}
+              key={data.key}>
+              <BillNameArea>
+                <BillName>{data.billName}</BillName>
+              </BillNameArea>
+              <ReplyArea>
+                <Reply className="icon">
+                  <ArrowBackIcon width={23} height={20} />
+                  <span>{data.text}</span>
+                </Reply>
+                <Info>
+                  <span>{data.creatorId}</span>
+                  {/* <span>{data.createdAt}</span> */}
+                </Info>
+              </ReplyArea>
+            </RecentReply>
+          ))}
+        </div>
         {onModal && billsInformation[0] && (
           <BillsModal billsInformation={billsInformation[0]} setOnModal={(bool) => setOnModal(bool)} />
         )}

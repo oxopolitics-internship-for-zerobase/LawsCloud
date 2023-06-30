@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {useSetRecoilState} from "recoil";
 import {pageState} from "../state/StateBillList";
 import styled from "styled-components";
+import SearchIcon from "../assests/icons/searchIcon.svg";
 
 const Title = () => {
   const setPageStateUseSet = useSetRecoilState(pageState);
@@ -26,7 +27,7 @@ const Title = () => {
             },
           })
         }
-        src="/icons/searchIcon.svg"
+        src={SearchIcon}
         alt="검색"
         style={{cursor: "pointer"}}
       />

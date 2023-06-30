@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 import TotalViews from "../TotalViews/TotalViews";
 import TotalComments from "../TotalComments/TotalComments";
 import {ToggleArea} from "../../style/StyledModal";
-import {ReactComponent as ViewIcon} from "../../images/view.svg";
+import {ReactComponent as ViewIcon} from "../../assests/images/view.svg";
 import ToggleLike from "../likeButton/ToggleLike";
 import {useRecoilState, useRecoilValue} from "recoil";
 import {userLikeState, userIp} from "../../recoil/store";

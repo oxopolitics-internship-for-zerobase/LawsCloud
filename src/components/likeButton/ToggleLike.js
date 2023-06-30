@@ -4,6 +4,8 @@ import styled from "styled-components";
 import {firebasedatabase} from "../Firebase/firebase";
 import {useRecoilValue} from "recoil";
 import {userIp} from "../../recoil/store";
+import LikeImg from "../../assests/icons/heart.png";
+import EmptyLikeImg from "../../assests/icons/EmptyHeart.png";
 
 export default function ToggleLike({billId, userLike}) {
   const [likestate, setLike] = useState(false);
@@ -43,11 +45,11 @@ export default function ToggleLike({billId, userLike}) {
     <div className="like-icon">
       {likestate ? (
         <HeartButton type="checkbox" onClick={onClick}>
-          <HeartImg src="/icons/heart.png" alt="하트" />
+          <HeartImg src={LikeImg} alt="하트" />
         </HeartButton>
       ) : (
         <HeartButton type="checkbox" onClick={onClick}>
-          <HeartImg src="/icons/EmptyHeart.png" alt="빈하트" />
+          <HeartImg src={EmptyLikeImg} alt="빈하트" />
         </HeartButton>
       )}
     </div>

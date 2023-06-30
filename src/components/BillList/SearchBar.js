@@ -2,7 +2,8 @@ import React, {useState} from "react";
 import {useSetRecoilState, useRecoilValue} from "recoil";
 import {billListState, pageState, searchFilterState, excelFilterState, categoryState} from "../../state/StateBillList";
 
-import searchImg from "../../images/search-icon.svg";
+import searchImg from "../../assests/images/search-icon.svg";
+
 import {StyledSearchArea} from "../../style/StyledSearchBar";
 const congressman_nums = [16, 17, 18, 19, 20, 21];
 

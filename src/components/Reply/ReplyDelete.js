@@ -2,6 +2,7 @@ import styled from "styled-components";
 import React from "react";
 import {deleteDoc, doc} from "firebase/firestore";
 import {dbService} from "../Firebase/firebase";
+import DeleteIcon from "../../assests/icons/close.png";
 export default function ReplyDelete({data, id}) {
   const onDeleteClick = async () => {
     const ok = window.prompt("비밀번호를 입력하세요");
@@ -13,7 +14,7 @@ export default function ReplyDelete({data, id}) {
   };
   return (
     <span onClick={onDeleteClick}>
-      <DeleteButton src="/icons/close.png" alt="delete" />
+      <DeleteButton src={DeleteIcon} alt="delete" />
     </span>
   );
 }

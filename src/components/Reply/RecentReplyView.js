@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {ReactComponent as ArrowBackIcon} from "../../images/arrow-back-icon.svg";
+import {ReactComponent as ArrowBackIcon} from "../../assests/images/arrow-back-icon.svg";
 import BillsModal from "../Modal/BillsModal";
 import axios from "axios";
 

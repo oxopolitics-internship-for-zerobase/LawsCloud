@@ -4,7 +4,6 @@
 <div> 2000년대 이후 법률 발의안들의 키워드들을 워드 클라우드로 보여주는 웹 어플리케이션입니다. </div>
 <h3> Description of Project </h3>
 
-
 <h4> Why? </h4>
 각 연도별 국회의원들의 관심사에 대한 키워드를 한눈에 파악할 수 있음
 
@@ -14,16 +13,16 @@
 
 <h2><b> Preview </b></h2><br/>
 <h3><b> 메인 페이지 </b></h3>
-<img src="./lawsCloud메인.PNG" alt="main" />
+<img src="./readMe/lawsCloud메인.PNG" alt="main" />
 <br/><br/><br/>
 <h3><b> 비교 페이지 </b></h3>
-<img src="./LawsCloud비교.PNG" alt="compareCloud" />
+<img src="./readMe/LawsCloud비교.PNG" alt="compareCloud" />
 <br/><br/><br/>
 <h3><b> 법률안 페이지 </b></h3>
-<img src="./LawsCloud법률안리스트.PNG" alt="billsList" />
+<img src="./readMe/LawsCloud법률안리스트.PNG" alt="billsList" />
 <br/><br/><br/>
 <h3><b> 법률안 상세페이지 </b></h3>
-<img src="./LawsCloud상세페이지모달.PNG" alt="billDetail "/>
+<img src="./readMe/LawsCloud상세페이지모달.PNG" alt="billDetail "/>
 
 <div style="margin-bottom: 30px">
 

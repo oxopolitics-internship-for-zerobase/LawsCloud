@@ -1,14 +1,17 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {Nav, Button} from "../../style/StyledPageNationSession";
+import {useRecoilValue, useRecoilState} from "recoil";
+import {excelFilterState, pageState} from "../../recoil/store";
 const KEY = process.env.REACT_APP_API_KEY;
 const BaseURL = `https://open.assembly.go.kr/portal/openapi/nzmimeepazxkubdpn?KEY=${KEY}&`;
 
-const PageNationSession = ({searchFilter, page, setPage, category, excelFilter}) => {
+const PageNationSession = ({searchFilter, category}) => {
   const [billSize, setBillSize] = useState(200);
   const [pageArray, setPageArray] = useState(0);
   const [addPage, setAddPage] = useState(0);
-
+  const [page, setPage] = useRecoilState(pageState);
+  const excelFilter = useRecoilValue(excelFilterState);
   const fetchData = async (page) => {
     let data = await axios
       .get(

@@ -1,22 +1,31 @@
 import React, {useState} from "react";
 import {StyledBillTable, StyledBillThead, StyledBillTbody} from "../../style/StyledBillsList";
-import ExcelFilterButton from "./ExcelFilterButton";
+import ExcelFilterList from "./ExcelFilterList";
 import BillsModal from "../Modal/BillsModal";
 import TotalViews from "../TotalViews/TotalViews";
 import LikeNum from "../likeButton/LikeNum";
 import {set, ref, get, child, update} from "firebase/database";
 import {firebasedatabase} from "../../Firebase/firebase";
 import {useRecoilState, useRecoilValue} from "recoil";
-import {userIp, userLikeState} from "../../recoil/store";
+import {userIp, userLikeState, excelFilterState, billListState, pageState} from "../../recoil/store";
 
-const BillsList = ({billList, excelFilter, setExcelFilter, setPage}) => {
-  const headerMeta = ["의안명", ["제안자", "제안 일자"], ["상임위원회", excelFilter], "조회수", "추천수"];
-
+const BillsList = () => {
   const [onModal, setOnModal] = useState(false);
   const [billsInformation, setBillsInformation] = useState({});
   const [viewCount, setViewCount] = useState(0);
-  const [_likeState, setLikeState] = useRecoilState(userLikeState);
+  const [toggle, setToggle] = useState(false);
+  const billList = useRecoilValue(billListState);
+  const excelFilter = useRecoilValue(excelFilterState);
   const ip = useRecoilValue(userIp);
+  const [, setExcelFilter] = useRecoilState(excelFilterState);
+  const [, setPage] = useRecoilState(pageState);
+  const [_likeState, setLikeState] = useRecoilState(userLikeState);
+
+  const toggleHandler = (e) => {
+    setPage(1);
+    setToggle(!toggle);
+    setExcelFilter(e.target.innerHTML === "전체" ? "" : e.target.innerHTML);
+  };
 
   const setView = (data) => {
     const firebaseRef = ref(firebasedatabase, "billId/" + data.BILL_ID);
@@ -50,13 +59,21 @@ const BillsList = ({billList, excelFilter, setExcelFilter, setPage}) => {
     });
   };
 
+  const headerMeta = ["의안명", ["제안자", "제안 일자"], ["상임위원회", excelFilter], "조회수", "추천수"];
   return (
     <>
       <StyledBillTable>
         <StyledBillThead>
           {headerMeta.map((data, idx) => (
-            <div key={idx} className="header">
-              {idx === 1 || idx === 2
+            <div key={idx} className="header" onClick={idx === 2 ? () => setToggle(!toggle) : () => {}}>
+              {idx === 1
+                ? [
+                    data[0],
+                    <span key={idx} className="subHeader">
+                      ({data[1] === "" ? "전체" : data[1]})
+                    </span>,
+                  ]
+                : idx === 2
                 ? [
                     data[0],
                     <span key={idx} className="subHeader">
@@ -64,7 +81,7 @@ const BillsList = ({billList, excelFilter, setExcelFilter, setPage}) => {
                     </span>,
                   ]
                 : data}
-              {idx === 2 && <ExcelFilterButton setExcelFilter={setExcelFilter} setPage={setPage} />}
+              {idx === 2 && <ExcelFilterList toggle={toggle} toggleHandler={toggleHandler} />}
             </div>
           ))}
         </StyledBillThead>

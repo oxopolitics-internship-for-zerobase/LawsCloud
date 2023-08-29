@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 import {useLocation} from "react-router-dom";
 import {StyledWrap} from "../style/StyledBills";
-import {useRecoilState} from "recoil";
-import {billListState, pageState, excelFilterState} from "../recoil/store";
 import BillsList from "../components/BillList/BillsList";
 import SearchBar from "../components/BillList/SearchBar";
 import PageNationSession from "../components/BillList/PageNationSession";
@@ -19,9 +17,6 @@ const Bills = () => {
   }
   const [searchFilter, setSearchFilter] = useState(location.state.inputValue);
   const [category, setCategory] = useState(String(location.state.age));
-  const [billList] = useRecoilState(billListState);
-  const [page, setPage] = useRecoilState(pageState);
-  const [excelFilter, setExcelFilter] = useRecoilState(excelFilterState);
 
   useBillList({searchFilter, category});
   return (
@@ -33,16 +28,10 @@ const Bills = () => {
           category={category}
           setCategory={setCategory}
         />
-        <BillsList billList={billList} excelFilter={excelFilter} setExcelFilter={setExcelFilter} setPage={setPage} />
+        <BillsList />
       </main>
       <footer>
-        <PageNationSession
-          page={page}
-          searchFilter={searchFilter}
-          setPage={setPage}
-          category={category}
-          excelFilter={excelFilter}
-        />
+        <PageNationSession searchFilter={searchFilter} category={category} />
       </footer>
       {/* <RecentReplys /> */}
     </StyledWrap>

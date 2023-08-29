@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import PropTypes from "prop-types";
 import ViewArea from "../../style/StyledModal";
-import {firebasedatabase} from "../Firebase/firebase";
+import {firebasedatabase} from "../../Firebase/firebase";
 import {ref, get, child} from "firebase/database";
 
 function TotalViews({billId}) {

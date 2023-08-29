@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import {deleteDoc, doc} from "firebase/firestore";
-import {dbService} from "../Firebase/firebase";
+import {dbService} from "../../Firebase/firebase";
 import DeleteIcon from "../../assests/icons/close.png";
 export default function ReplyDelete({data, id}) {
   const onDeleteClick = async () => {

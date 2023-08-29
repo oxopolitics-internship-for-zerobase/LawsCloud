@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 import RecentReplysView from "./RecentReplyView";
 
 import {ref, get, child} from "firebase/database";
-import {firebasedatabase, dbService} from "../Firebase/firebase";
+import {firebasedatabase, dbService} from "../../Firebase/firebase";
 import {onSnapshot, collection} from "firebase/firestore";
 
 export default function RecentReplys() {

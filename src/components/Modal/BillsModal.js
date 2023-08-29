@@ -13,7 +13,7 @@ import ToggleLike from "../likeButton/ToggleLike";
 import {useRecoilState, useRecoilValue} from "recoil";
 import {userLikeState, userIp} from "../../recoil/store";
 import {get, child, ref} from "firebase/database";
-import {firebasedatabase} from "../Firebase/firebase";
+import {firebasedatabase} from "../../Firebase/firebase";
 
 function BillsModal({billsInformation, setOnModal}) {
   const [likeState, setLikeState] = useRecoilState(userLikeState);

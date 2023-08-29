@@ -1,7 +1,7 @@
 import {runTransaction, ref} from "firebase/database";
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
-import {firebasedatabase} from "../Firebase/firebase";
+import {firebasedatabase} from "../../Firebase/firebase";
 import {useRecoilValue} from "recoil";
 import {userIp} from "../../recoil/store";
 import LikeImg from "../../assests/icons/heart.png";

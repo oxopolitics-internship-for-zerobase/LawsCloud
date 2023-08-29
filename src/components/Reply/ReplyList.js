@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {onSnapshot, collection} from "firebase/firestore";
-import {dbService} from "../Firebase/firebase";
+import {dbService} from "../../Firebase/firebase";
 import ReplyDelete from "./ReplyDelete";
 
 export default function ReplyList({billId}) {

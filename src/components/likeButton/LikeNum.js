@@ -1,6 +1,6 @@
 import {child, get, ref} from "firebase/database";
 import {useState} from "react";
-import {firebasedatabase} from "../Firebase/firebase";
+import {firebasedatabase} from "../../Firebase/firebase";
 import React from "react";
 
 export default function LikeNum({billId}) {

@@ -15,7 +15,7 @@ const BillsList = ({billList, excelFilter, setExcelFilter, setPage}) => {
   const [onModal, setOnModal] = useState(false);
   const [billsInformation, setBillsInformation] = useState({});
   const [viewCount, setViewCount] = useState(0);
-  const [likeState, setLikeState] = useRecoilState(userLikeState);
+  const [_likeState, setLikeState] = useRecoilState(userLikeState);
   const ip = useRecoilValue(userIp);
 
   const setView = (data) => {

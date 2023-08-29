@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 
 import RecentReplysView from "./RecentReplyView";
 
-import {ref, get, child, onValue} from "firebase/database";
+import {ref, get, child} from "firebase/database";
 import {firebasedatabase, dbService} from "../Firebase/firebase";
 import {onSnapshot, collection} from "firebase/firestore";
 

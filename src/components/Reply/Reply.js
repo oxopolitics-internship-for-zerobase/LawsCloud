@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import {addDoc, collection, serverTimestamp} from "firebase/firestore";
-import {dbService} from "../Firebase/firebase";
+import {dbService} from "../../Firebase/firebase";
 import {v4 as uuidv4} from "uuid";
 import axios from "axios";
 import ReplyList from "./ReplyList";

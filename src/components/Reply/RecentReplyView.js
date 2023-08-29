@@ -4,7 +4,7 @@ import BillsModal from "../Modal/BillsModal";
 import axios from "axios";
 
 import {ref, get, child, update, set} from "firebase/database";
-import {firebasedatabase} from "../Firebase/firebase";
+import {firebasedatabase} from "../../Firebase/firebase";
 
 import {
   Replys,

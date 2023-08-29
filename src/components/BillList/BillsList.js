@@ -5,7 +5,7 @@ import BillsModal from "../Modal/BillsModal";
 import TotalViews from "../TotalViews/TotalViews";
 import LikeNum from "../likeButton/LikeNum";
 import {set, ref, get, child, update} from "firebase/database";
-import {firebasedatabase} from "../Firebase/firebase";
+import {firebasedatabase} from "../../Firebase/firebase";
 import {useRecoilState, useRecoilValue} from "recoil";
 import {userIp, userLikeState} from "../../recoil/store";
 

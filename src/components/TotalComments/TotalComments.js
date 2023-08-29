@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {onSnapshot, collection} from "firebase/firestore";
-import {dbService} from "../Firebase/firebase";
+import {dbService} from "../../Firebase/firebase";
 
 function TotalComments({billId}) {
   const [totalCommentsCount, setTotalCommentsCount] = useState(0);

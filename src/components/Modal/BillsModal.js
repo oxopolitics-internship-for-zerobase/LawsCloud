@@ -23,7 +23,9 @@ function BillsModal({billsInformation, setOnModal}) {
 
   const getLikeState = () => {
     get(child(dbRef, `billId/${billsInformation.BILL_ID}`)).then((snapshot) => {
-      if (snapshot.exists()) {
+      console.log(snapshot.val(), "snapshot");
+      if (snapshot.exists() && snapshot.val().likes) {
+        console.log("hi");
         setLikeState(snapshot.val().likes[stringUserIp]);
       } else {
         setLikeState(false);
@@ -32,11 +34,11 @@ function BillsModal({billsInformation, setOnModal}) {
   };
 
   useEffect(() => {
+    getLikeState();
     document.body.style = `overflow: hidden`;
     return () => (document.body.style = `overflow: auto`);
   }, []);
 
-  getLikeState();
   return (
     <>
       {billsInformation && (
@@ -73,6 +75,7 @@ BillsModal.propTypes = {
     BILL_ID: PropTypes.string,
   }),
   setOnModal: PropTypes.func,
+  onModal: PropTypes.bool,
 };
 
 export default BillsModal;

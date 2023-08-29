@@ -41,7 +41,7 @@ const BillsList = ({billList, excelFilter, setExcelFilter, setPage}) => {
     const firebaseRef = ref(firebasedatabase);
     const userIp = ip.split(".").join("");
     get(child(firebaseRef, "billId/" + data.BILL_ID)).then((snapshot) => {
-      if (snapshot.val().likes) {
+      if (snapshot.exists() && snapshot.val().likes) {
         const data = snapshot.val().likes[userIp];
         setLikeState(data);
       } else {
@@ -103,7 +103,9 @@ const BillsList = ({billList, excelFilter, setExcelFilter, setPage}) => {
         </StyledBillTbody>
       </StyledBillTable>
 
-      {onModal && <BillsModal billsInformation={billsInformation} setOnModal={(bool) => setOnModal(bool)} />}
+      {onModal && (
+        <BillsModal billsInformation={billsInformation} setOnModal={(bool) => setOnModal(bool)} onModal={onModal} />
+      )}
     </>
   );
 };

@@ -29,7 +29,6 @@ const PageNationSession = ({searchFilter, page, setPage, category, excelFilter})
         setBillSize(dataSize);
         return data;
       } else if (400 < dataSize && dataSize < 500) {
-        console.log(dataSize);
         setBillSize(dataSize);
       }
       page += 1;
@@ -42,7 +41,6 @@ const PageNationSession = ({searchFilter, page, setPage, category, excelFilter})
     getBillsData();
   }, [searchFilter, category, excelFilter]);
   useEffect(() => {
-    console.log(billSize);
     if (Math.ceil(billSize / 10) === Math.ceil(page / 10)) {
       setPageArray(billSize % 10 == 0 ? 10 : billSize % 10);
     } else {
@@ -50,7 +48,6 @@ const PageNationSession = ({searchFilter, page, setPage, category, excelFilter})
     }
     setAddPage(parseInt((page - 1) / 10) * 10);
   }, [page, billSize]);
-  console.log(pageArray, page, billSize);
   return (
     <>
       <Nav>

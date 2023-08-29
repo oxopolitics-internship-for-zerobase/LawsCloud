@@ -16,8 +16,6 @@ function Cloud({age, year, elemId, setSearch, size = 100}) {
   }
 
   WordCloud.miniumFontSize = 10;
-
-  // console.log(WordCloud.isSupported, WordCloud.miniumFontSize);
 }
 
 function drawCloud(words, elemId, setSearch, size, age) {

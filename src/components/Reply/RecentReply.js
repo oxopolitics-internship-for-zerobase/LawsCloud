@@ -26,7 +26,7 @@ export default function RecentReplys() {
               if (item.text && item.age) {
                 item["billName"] = bill[1].name;
                 item["billId"] = bill[0];
-                item["seconds"] = item.createdAt.seconds;
+                item["seconds"] = item.createdAt ? item.createdAt.seconds : 0;
 
                 setRecentReply((recentReply) => [...recentReply, item]);
               }

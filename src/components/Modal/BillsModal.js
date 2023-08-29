@@ -23,9 +23,7 @@ function BillsModal({billsInformation, setOnModal}) {
 
   const getLikeState = () => {
     get(child(dbRef, `billId/${billsInformation.BILL_ID}`)).then((snapshot) => {
-      console.log(snapshot.val(), "snapshot");
       if (snapshot.exists() && snapshot.val().likes) {
-        console.log("hi");
         setLikeState(snapshot.val().likes[stringUserIp]);
       } else {
         setLikeState(false);

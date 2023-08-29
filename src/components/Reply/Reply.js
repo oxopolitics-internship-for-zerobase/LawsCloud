@@ -3,13 +3,15 @@ import styled from "styled-components";
 import {addDoc, collection, serverTimestamp} from "firebase/firestore";
 import {dbService} from "../../Firebase/firebase";
 import {v4 as uuidv4} from "uuid";
-import axios from "axios";
 import ReplyList from "./ReplyList";
+import {useRecoilValue} from "recoil";
+import {userIp} from "../../recoil/store";
 
 export default function Reply({billId, billAge}) {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [content, setContent] = useState("");
+  const ip = useRecoilValue(userIp);
 
   const onChange = (e) => {
     const {
@@ -26,15 +28,12 @@ export default function Reply({billId, billAge}) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const userIpInfo = await axios("https://api.ipify.org/?format=json");
-    const ipInfo = userIpInfo.data.ip;
-    const userInfo = ipInfo.split(".").splice(0, 2).join(".");
     await addDoc(collection(dbService, `${billId}`), {
       text: content,
       createdAt: serverTimestamp(),
       creatorId: id,
       password: password,
-      ip: userInfo,
+      ip: ip,
       key: uuidv4(),
       age: Number(billAge),
     });

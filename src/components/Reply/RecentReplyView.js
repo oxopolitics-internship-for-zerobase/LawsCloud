@@ -25,13 +25,14 @@ export default function RecentReplysView({recentReplyArr}) {
   const [billsInformation, setBillsInformation] = useState({});
   const [viewCount, setViewCount] = useState(0);
 
-  let overlappingReplyCheck = recentReplyArr.reduce(function (acc, current) {
-    if (acc.findIndex(({id}) => id === current.id) === -1) {
-      acc.push(current);
-    }
-    return acc;
-  }, []);
-  overlappingReplyCheck.sort((prev, next) => next.seconds - prev.seconds);
+  const uniqueAndSortedReplies = recentReplyArr
+    .reduce((acc, current) => {
+      if (!acc.some((item) => item.id === current.id)) {
+        acc.push(current);
+      }
+      return acc;
+    }, [])
+    .sort((prev, next) => next.seconds - prev.seconds);
 
   const setView = (data) => {
     const firebaseRef = ref(firebasedatabase, "billId/" + data.billId);
@@ -67,7 +68,7 @@ export default function RecentReplysView({recentReplyArr}) {
       <Replys>
         <Title>최신 댓글</Title>
         <div className="recent-replies">
-          {overlappingReplyCheck.map((data) => (
+          {uniqueAndSortedReplies.map((data) => (
             <RecentReply
               onClick={() => {
                 setOnModal(!onModal);

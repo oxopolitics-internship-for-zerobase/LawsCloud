@@ -44,7 +44,7 @@ const Bills = () => {
           excelFilter={excelFilter}
         />
       </footer>
-      <RecentReplys />
+      {/* <RecentReplys /> */}
     </StyledWrap>
   );
 };

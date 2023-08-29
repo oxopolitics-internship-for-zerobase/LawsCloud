@@ -42,6 +42,7 @@ export const StyledBillThead = styled.div`
   }
   .header:nth-child(3) {
     position: relative;
+    cursor: pointer;
   }
   .header:nth-child(4),
   .header:nth-child(5) {

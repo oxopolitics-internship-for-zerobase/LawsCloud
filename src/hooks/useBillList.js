@@ -17,6 +17,6 @@ export const useBillList = ({searchFilter, category}) => {
       }`,
     })
       .then((res) => setBillListUseSet(res.data.nzmimeepazxkubdpn[1].row))
-      .catch((error) => alert(`검색 결과가 없습니다.\n${error}`));
+      .catch(() => alert(`검색 결과가 없습니다.`));
   }, [searchFilter, pageValue, excelFilterValue, category]);
 };

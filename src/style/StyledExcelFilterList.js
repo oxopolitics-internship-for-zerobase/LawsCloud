@@ -3,9 +3,7 @@ import styled from "styled-components";
 export const StyledToggleButton = styled.button`
   position: absolute;
   top: 17px;
-  right: 0;
-  left: min(16vw, 110px);
-  cursor: pointer;
+  right: 4.5vw;
   color: ${(props) => (props.toggle ? "gray" : "white")};
   appearance: none;
   background-color: transparent;
@@ -13,10 +11,9 @@ export const StyledToggleButton = styled.button`
   padding: 0;
 `;
 
-export const StyledcommitteeList = styled.ul`
+export const StyledCommitteeList = styled.ul`
   position: absolute;
-  top: 34px;
-  right: 20px;
+  top: 61px;
   display: ${(props) => (props.toggle ? "flex" : "none")};
   flex-direction: column;
   width: 120px;
@@ -28,6 +25,7 @@ export const StyledcommitteeList = styled.ul`
   padding: 5px;
   background: #ffffff;
   z-index: 9999;
+  box-sizing: border-box;
   li {
     display: flex;
     align-items: center;
@@ -36,7 +34,6 @@ export const StyledcommitteeList = styled.ul`
 
   button {
     width: 100%;
-    /* height: 50px; */
     border: 0;
     border-radius: 10px;
     padding: 10px 5px;
@@ -48,5 +45,9 @@ export const StyledcommitteeList = styled.ul`
   }
   button:hover {
     background: #e6e6e6;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 `;

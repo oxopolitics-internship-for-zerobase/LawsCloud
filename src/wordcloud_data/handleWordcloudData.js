@@ -64,18 +64,10 @@ for (const elem of agesAndYears) {
   wordcloudData[elem[0] + "-" + elem[1]] = makeBillsWordcloudData(elem[0], elem[1], 100);
 }
 writeFileSync(`./wordcloud/cloudNouns/cloud-nouns-3.json`, JSON.stringify(wordcloudData), "utf8");
-// makeBillsWordcloudData(21, 2021, 100);
 ////실행 구역!!
 
 function makeBillsWordcloudData(age, year, wordsNum = 30) {
   const billsCloudData = makeWordcloudData(`./wordcloud/billsNouns/${age}th-${year}-nouns.txt`, wordsNum);
-  // writeFileSync(
-  //   `./wordcloud/cloudNouns/${age}th-${year}-cloud-nouns.json`,
-  //   JSON.stringify(billsCloudData),
-  //   'utf8'
-  // );
-
-  console.log(`${age}th-${year}-cloud-nouns.txt`, "**Done!**");
 
   return billsCloudData;
 }

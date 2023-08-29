@@ -37,7 +37,6 @@ const Title = () => {
 export default Title;
 
 const Header = styled.header`
-  /* --title-between: 200px; */
   min-width: 320px;
   display: flex;
   height: 70px;
@@ -46,12 +45,11 @@ const Header = styled.header`
   justify-content: center;
 
   h1 {
-    /* margin-left: calc(62px + var(--title-between)); */
     text-align: center;
     font-weight: 800;
   }
+
   img {
-    /* margin-left: var(--title-between); */
     position: absolute;
     margin-left: min(calc(200px + 25vw), 500px);
     height: 25px;

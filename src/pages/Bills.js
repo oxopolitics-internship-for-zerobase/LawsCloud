@@ -1,22 +1,12 @@
 import React, {useEffect, useState} from "react";
-
-// route
 import {useLocation} from "react-router-dom";
-
-// style
 import {StyledWrap} from "../style/StyledBills";
-
-// recoil
 import {useRecoilState} from "recoil";
 import {billListState, pageState, excelFilterState} from "../state/StateBillList";
-
-// components
 import BillsList from "../components/BillList/BillsList";
 import SearchBar from "../components/BillList/SearchBar";
 import PageNationSession from "../components/BillList/PageNationSession";
 import RecentReplys from "../components/Reply/RecentReply";
-
-//useEffect
 import {useBillList} from "../hooks/useBillList";
 
 const Bills = () => {

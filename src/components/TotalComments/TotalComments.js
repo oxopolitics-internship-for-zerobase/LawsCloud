@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from "react";
-
-// getFirestore
 import {onSnapshot, collection} from "firebase/firestore";
 import {dbService} from "../Firebase/firebase";
 

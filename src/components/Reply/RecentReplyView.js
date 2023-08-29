@@ -85,7 +85,6 @@ export default function RecentReplysView({recentReplyArr}) {
                 </Reply>
                 <Info>
                   <span>{data.creatorId}</span>
-                  {/* <span>{data.createdAt}</span> */}
                 </Info>
               </ReplyArea>
             </RecentReply>

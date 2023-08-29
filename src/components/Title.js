@@ -1,7 +1,7 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
 import {useSetRecoilState} from "recoil";
-import {pageState} from "../state/StateBillList";
+import {pageState} from "../recoil/store";
 import styled from "styled-components";
 import SearchIcon from "../assests/icons/searchIcon.svg";
 

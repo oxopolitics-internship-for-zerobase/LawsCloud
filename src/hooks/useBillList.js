@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import {useSetRecoilState, useRecoilValue} from "recoil";
-import {billListState, pageState, excelFilterState} from "../state/StateBillList";
+import {billListState, pageState, excelFilterState} from "../recoil/store";
 import axios from "axios";
 const KEY = process.env.REACT_APP_API_KEY;
 const BaseURL = `https://open.assembly.go.kr/portal/openapi/nzmimeepazxkubdpn?KEY=${KEY}&`;

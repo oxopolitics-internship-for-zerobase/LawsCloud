@@ -12,8 +12,9 @@ import {userIp} from "./recoil/store";
 
 function App() {
   const [ip, setIp] = useRecoilState(userIp);
+  const apiKey = process.env.REACT_APP_IP_API_KEY;
   const getIp = async () => {
-    const userIpInfo = await axios("https://api.ipify.org/?format=json");
+    const userIpInfo = await axios(`https://geo.ipify.org/api/v2/country?apiKey=${apiKey}`);
     setIp(userIpInfo.data.ip);
   };
   getIp();

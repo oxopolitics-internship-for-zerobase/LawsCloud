@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useSetRecoilState} from "recoil";
-import {pageState} from "../../state/StateBillList";
+import {pageState} from "../../recoil/store";
 
 import searchImg from "../../assests/images/search-icon.svg";
 

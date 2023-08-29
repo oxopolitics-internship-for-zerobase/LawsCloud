@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useLocation} from "react-router-dom";
 import {StyledWrap} from "../style/StyledBills";
 import {useRecoilState} from "recoil";
-import {billListState, pageState, excelFilterState} from "../state/StateBillList";
+import {billListState, pageState, excelFilterState} from "../recoil/store";
 import BillsList from "../components/BillList/BillsList";
 import SearchBar from "../components/BillList/SearchBar";
 import PageNationSession from "../components/BillList/PageNationSession";

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {useLocation} from "react-router-dom";
 import {StyledWrap} from "../style/StyledBills";
 import {useRecoilState} from "recoil";
@@ -19,7 +19,7 @@ const Bills = () => {
   }
   const [searchFilter, setSearchFilter] = useState(location.state.inputValue);
   const [category, setCategory] = useState(String(location.state.age));
-  const [billList, setBillList] = useRecoilState(billListState);
+  const [billList] = useRecoilState(billListState);
   const [page, setPage] = useRecoilState(pageState);
   const [excelFilter, setExcelFilter] = useRecoilState(excelFilterState);
 

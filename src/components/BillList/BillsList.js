@@ -105,7 +105,7 @@ const BillsList = () => {
                   <br />
                   {data.PROPOSE_DT}
                 </div>
-                <div className="item">({data.COMMITTEE ? data.COMMITTEE : "소속 없음"})</div>
+                <div className="item">{data.COMMITTEE ? data.COMMITTEE : "소속 없음"}</div>
                 <div className="item">
                   <TotalViews billId={data.BILL_ID} />
                 </div>

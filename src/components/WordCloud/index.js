@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import StyledWrapper from "../../style/StyledWordCloud";
+import {StyledWrapper} from "../../style/StyledWordCloud";
 import Cloud from "./Cloud";
 
-const WordCloud = ({age, year, setSearch, size = 100, elemId}) => {
+const WordCloud = ({age, year, setSearch, size = 100, elemId, clickHandler}) => {
   return (
     <StyledWrapper size={size} className="wordcloud-back">
-      <div id={elemId} className="wordcloud">
+      <div id={elemId} className="wordcloud" onClick={clickHandler}>
         <Cloud age={age} year={year} elemId={elemId} setSearch={setSearch} size={Number(size)} />
       </div>
     </StyledWrapper>

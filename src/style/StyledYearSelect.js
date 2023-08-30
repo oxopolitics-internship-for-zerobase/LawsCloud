@@ -21,5 +21,3 @@ export const StyledWrapper = styled.div`
     font-weight: 600;
   }
 `;
-
-export default StyledWrapper;

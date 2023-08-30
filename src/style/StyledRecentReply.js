@@ -37,9 +37,6 @@ export const Replys = styled.section`
       display: none;
       background: none;
     }
-    /* firefox */
-    scrollbar-color: #c6c6c6;
-    scrollbar-width: thin;
   }
 `;
 

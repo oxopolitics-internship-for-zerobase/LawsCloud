@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import WordCloud from "wordcloud";
-import cloudNouns from "../../wordcloud_data/cloudNouns/cloud-nouns-21th.json";
+import cloudNouns from "../../wordcloud_data/cloud-nouns-21th.json";
 
 function Cloud({age, year, elemId, setSearch, size = 100}) {
   useEffect(() => {

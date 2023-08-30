@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import StyledWrapper from "../../style/StyledYearSelect";
+import {StyledWrapper} from "../../style/StyledYearSelect";
 
 const YearSelect = ({year, setYear, firstYear, yearsNumber, size = 100}) => {
   const years = new Array(yearsNumber).fill(0).map((elem) => elem + firstYear++);

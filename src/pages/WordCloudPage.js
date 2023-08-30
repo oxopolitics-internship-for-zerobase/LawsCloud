@@ -18,7 +18,3 @@ const WordCloudPage = () => {
 };
 
 export default WordCloudPage;
-
-WordCloudPage.propTypes = {
-  setSearch: PropTypes.func,
-};

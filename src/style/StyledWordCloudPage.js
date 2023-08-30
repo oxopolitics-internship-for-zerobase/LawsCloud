@@ -15,7 +15,7 @@ export const StyledWrapper = styled.div`
     height: 36px;
 
     background: #000000;
-    border-radius: 15px;
+    border-radius: 18px;
     border-style: none;
 
     font-weight: 600;

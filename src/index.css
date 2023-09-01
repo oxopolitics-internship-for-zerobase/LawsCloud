@@ -10,8 +10,8 @@
 }
 ::-webkit-scrollbar {
   width: 6px;
-  z-index: 1;
-  height: 80%;
+  z-index: -1;
+  height: 60%;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #c6c6c6;

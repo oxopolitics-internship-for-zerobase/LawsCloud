@@ -47,7 +47,7 @@ export const ModalView = styled.div`
   box-sizing: border-box;
 
   width: min(100%, 1200px);
-  height: 600px;
+  height: 800px;
 
   position: fixed;
   left: 50%;
@@ -58,9 +58,12 @@ export const ModalView = styled.div`
 
   overflow: scroll;
 
-  border-radius: 20px;
+  border-radius: 12px;
   background-color: white;
   box-shadow: 1px 3px 20px rgba(0, 0, 0, 0.2);
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Blur = styled.label`
@@ -92,10 +95,6 @@ export const Container = styled.div`
 
   border: none;
 
-  /* border: solid;
-  border-width: 1px 0 0 1px;
-  border-color: #c6c6c6; */
-
   .bill-detail {
     @media screen and (max-width: 722px) {
       height: 500px;
@@ -120,10 +119,12 @@ export const BillInformationArea = styled.div`
   display: flex;
   background-color: #fff;
   z-index: 10;
-
   @media screen and (max-width: 722px) {
     flex-direction: column;
   }
+`;
+export const BillIframe = styled.div`
+  height: 400px;
 `;
 
 export const BillProc = styled.div`

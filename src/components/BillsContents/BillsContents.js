@@ -13,6 +13,7 @@ import {
   BillInfo,
   BillCommittee,
   BorderLine,
+  BillIframe,
 } from "../../style/StyledModal";
 
 function BillsContents({billsInformation}) {
@@ -39,9 +40,9 @@ function BillsContents({billsInformation}) {
           <BillCommittee>{billsInformation.COMMITTEE}</BillCommittee>
         </BillProcResultArea>
       </BillInformationArea>
-      <BillInformationArea className="bill-detail">
+      <BillIframe className="bill-detail">
         <BillsDetail billId={billsInformation.BILL_ID} />
-      </BillInformationArea>
+      </BillIframe>
     </Container>
   );
 }

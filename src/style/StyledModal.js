@@ -47,7 +47,7 @@ export const ModalView = styled.div`
   box-sizing: border-box;
 
   width: min(100%, 1200px);
-  height: 600px;
+  height: 800px;
 
   position: fixed;
   left: 50%;
@@ -56,11 +56,14 @@ export const ModalView = styled.div`
 
   z-index: 1000;
 
-  overflow: scroll;
+  overflow: hidden;
 
-  border-radius: 20px;
+  border-radius: 12px;
   background-color: white;
   box-shadow: 1px 3px 20px rgba(0, 0, 0, 0.2);
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Blur = styled.label`
@@ -92,10 +95,6 @@ export const Container = styled.div`
 
   border: none;
 
-  /* border: solid;
-  border-width: 1px 0 0 1px;
-  border-color: #c6c6c6; */
-
   .bill-detail {
     @media screen and (max-width: 722px) {
       height: 500px;
@@ -120,10 +119,12 @@ export const BillInformationArea = styled.div`
   display: flex;
   background-color: #fff;
   z-index: 10;
-
   @media screen and (max-width: 722px) {
     flex-direction: column;
   }
+`;
+export const BillIframe = styled.div`
+  height: 400px;
 `;
 
 export const BillProc = styled.div`
@@ -164,18 +165,16 @@ export const BillName = styled.div`
 
 export const Title = styled.div`
   width: 168px;
-  height: 64px;
+  height: 40px;
 
   display: flex;
+  justify-content: center;
   align-items: center;
-
-  padding-left: 41px;
 
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
 
-  background-color: #e6e6e6;
   color: #000000;
 
   white-space: nowrap;
@@ -240,27 +239,11 @@ export const BorderLine = styled.div`
   left: 1px;
   top: 45px;
 
-  /* border: 3px solid #000000; */
   border: none;
 `;
 export const BillDetailArea = styled.div`
   box-sizing: border-box;
-  /* margin: 20px 0; */
   height: 460px;
-
-  transform: translateY(-50px);
-
-  display: flex;
-  flex: 1;
-
-  border: solid;
-  border-width: 0 0 1px 0;
-  border-color: #c6c6c6;
-
-  z-index: 1;
-  .detail {
-    // border: none;
-  }
 
   @media screen and (max-width: 550px) {
     width: 550px;

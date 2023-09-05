@@ -107,7 +107,7 @@ const BillsList = () => {
                 </div>
                 <div className="item">{data.COMMITTEE ? data.COMMITTEE : "소속 없음"}</div>
                 <div className="item">
-                  <TotalViews billId={data.BILL_ID} />
+                  <TotalViews billId={data.BILL_ID} inModal={false} />
                 </div>
                 <div className="item">
                   <LikeNum billId={data.BILL_ID} />

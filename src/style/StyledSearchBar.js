@@ -51,5 +51,6 @@ export const StyledSearchArea = styled.div`
   }
   img {
     height: 18px;
+    cursor: pointer;
   }
 `;

@@ -56,7 +56,7 @@ export const ModalView = styled.div`
 
   z-index: 1000;
 
-  overflow: scroll;
+  overflow: hidden;
 
   border-radius: 12px;
   background-color: white;
@@ -165,18 +165,16 @@ export const BillName = styled.div`
 
 export const Title = styled.div`
   width: 168px;
-  height: 64px;
+  height: 40px;
 
   display: flex;
+  justify-content: center;
   align-items: center;
-
-  padding-left: 41px;
 
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
 
-  background-color: #e6e6e6;
   color: #000000;
 
   white-space: nowrap;
@@ -241,27 +239,11 @@ export const BorderLine = styled.div`
   left: 1px;
   top: 45px;
 
-  /* border: 3px solid #000000; */
   border: none;
 `;
 export const BillDetailArea = styled.div`
   box-sizing: border-box;
-  /* margin: 20px 0; */
   height: 460px;
-
-  transform: translateY(-50px);
-
-  display: flex;
-  flex: 1;
-
-  border: solid;
-  border-width: 0 0 1px 0;
-  border-color: #c6c6c6;
-
-  z-index: 1;
-  .detail {
-    // border: none;
-  }
 
   @media screen and (max-width: 550px) {
     width: 550px;

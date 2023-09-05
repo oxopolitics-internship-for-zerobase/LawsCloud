@@ -86,8 +86,8 @@ const ReplyArea = styled.form`
 `;
 
 const ReplyId = styled.input`
-  width: 210px;
-  height: 40px;
+  width: 192px;
+  height: 36px;
   margin-bottom: 10px;
   padding-left: 10px;
 
@@ -100,8 +100,8 @@ const ReplyId = styled.input`
 `;
 
 const ReplyPassword = styled.input`
-  width: 210px;
-  height: 40px;
+  width: 192px;
+  height: 36px;
   padding-left: 10px;
 
   font-size: 16px;
@@ -114,7 +114,7 @@ const ReplyPassword = styled.input`
 
 const InputReply = styled.textarea`
   width: 900px;
-  height: 155px;
+  height: 140px;
   resize: none;
   padding-left: 10px;
   padding-top: 10px;

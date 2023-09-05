@@ -51,7 +51,7 @@ function BillsModal({billsInformation, setOnModal}) {
               <ViewIcon width={23} height={20}>
                 <label title="조회수" />
               </ViewIcon>
-              <TotalViews billId={billsInformation.BILL_ID} />
+              <TotalViews billId={billsInformation.BILL_ID} inModal={true} />
               <ToggleLike billId={billsInformation.BILL_ID} userLike={likeState} />
             </span>
           </ToggleArea>
